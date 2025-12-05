@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mompox Éternelle : Voyage au Cœur du Temps Suspendu </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Mompox Éternelle : Voyage au Cœur du Temps Suspendu</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée à Mompox</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Immersion Douce dans le Passé</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 L'Héritage Colonial et l'Artisanat du Filigrane</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Sur les Traces de Bolívar et la Vie Quotidienne</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Le Fleuve et ses Secrets</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Saveurs Locales et Traditions Culinaires</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Les Églises et l'Architecture Religieuse</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Les Légendes et l'Imaginaire Momposino</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Détente et Reconnexion</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Les Alentours de Mompox</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 L'Artisanat au Quotidien</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 La Vie Culturelle et les Musées</a>
+            
+                <a href="#jour-13" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J13 Revoir ses Coups de Cœur</a>
+            
+                <a href="#jour-14" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J14 Derniers Instants et Préparatifs</a>
+            
+                <a href="#jour-15" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J15 Départ de Mompox</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Mompox</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Mompox Éternelle : Voyage au Cœur du Temps Suspendu</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 15 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 3200€</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 environ 20-24 heures (escales incluses) depuis Paris</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée à Mompox</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage depuis Paris, vous atteignez enfin Mompox, une ville figée dans le temps. L'arrivée se fait en fin de journée, permettant une installation sereine et une première immersion douce dans l'ambiance coloniale. Laissez-vous bercer par le calme de la nuit momposina.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Arrivée à Mompox</strong>: Transfert depuis l'aéroport le plus proche (Corozal ou Sincelejo) vers votre hôtel à Mompox. Le trajet en voiture ou en bus est une première découverte des paysages ruraux.</li>
+                            
+                                <li>🛏️ <strong>Installation à l'hôtel</strong>: Prenez le temps de vous installer dans votre hébergement, souvent une charmante maison coloniale restaurée, et de vous rafraîchir après le voyage.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ Accès à Mompox</p>
+                                <p class="text-gray-700">Mompox est isolée. Le plus simple est de voler de Carthagène ou Bogotá vers Corozal (CZL) ou Sincelejo (SJE), puis de prendre un taxi partagé ou un bus pour Mompox (environ 3-4h).</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌙 Première impression</p>
+                                <p class="text-gray-700">Le soir, les rues de Mompox s'animent d'une douce lumière. Profitez d'une courte balade pour ressentir l'atmosphère paisible.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Immersion Douce dans le Passé</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Réveillez-vous au son des cloches et des chants d'oiseaux, typiques de Mompox. Cette journée est dédiée à une première exploration tranquille du centre historique, classé au patrimoine mondial de l'UNESCO, en se laissant porter par son rythme unique. Découvrez les places ombragées et les façades colorées.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♀️ <strong>Flânerie matinale dans le centre historique</strong>: Perdez-vous dans les ruelles pavées, admirez l'architecture coloniale et les balcons fleuris qui font le charme de Mompox. C'est l'occasion de s'imprégner de l'ambiance.</li>
+                            
+                                <li>⛪ <strong>Visite de l'Église Santa Bárbara</strong>: Cette église emblématique, avec son clocher octogonal unique et sa façade baroque, est un incontournable. Elle offre une vue magnifique sur le fleuve Magdalena.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Conseil vestimentaire</p>
+                                <p class="text-gray-700">Il fait chaud et humide à Mompox. Privilégiez des vêtements légers en coton, un chapeau et de la crème solaire pour les balades en journée.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🥤 Rafraîchissement</p>
+                                <p class="text-gray-700">Goûtez aux jus de fruits frais locaux (lulo, maracuyá, guanábana) vendus partout. Ils sont délicieux et désaltérants.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">L'Héritage Colonial et l'Artisanat du Filigrane</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongez plus profondément dans l'histoire architecturale de Mompox et découvrez l'art ancestral du filigrane d'argent, une tradition qui a fait la renommée de la ville. Observez les artisans à l'œuvre et admirez la finesse de leurs créations. La journée se termine par un dîner au bord du fleuve.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏛️ <strong>Exploration approfondie du Centre Historique</strong>: Poursuivez la découverte des rues principales comme la Calle Real del Medio et la Calle de la Albarrada, en admirant les détails architecturaux des maisons coloniales et leurs patios intérieurs.</li>
+                            
+                                <li>💍 <strong>Découverte de l'art du filigrane d'argent</strong>: Visitez un atelier de joaillerie pour observer les artisans momposinos transformer de fins fils d'argent en bijoux délicats, une technique transmise de génération en génération.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Souvenirs</p>
+                                <p class="text-gray-700">Les bijoux en filigrane sont le souvenir emblématique de Mompox. N'hésitez pas à discuter avec les artisans pour comprendre leur travail et trouver la pièce parfaite.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Dîner au bord du fleuve</p>
+                                <p class="text-gray-700">De nombreux restaurants offrent des tables avec vue sur le Río Magdalena. C'est une expérience magique au coucher du soleil.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sur les Traces de Bolívar et la Vie Quotidienne</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Suivez les pas de Simón Bolívar, qui a séjourné à Mompox et y a recruté une partie de son armée. Imprégnez-vous de la vie quotidienne des Momposinos en vous mêlant à l'effervescence du marché local et en vous détendant sur l'une des places ombragées de la ville. Une journée riche en rencontres et en saveurs.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♂️ <strong>Visite de la Casa de Bolívar</strong>: Explorez cette maison historique où Simón Bolívar aurait résidé. Bien que n'étant pas un musée formel, elle témoigne de l'importance de Mompox dans l'histoire de l'indépendance colombienne.</li>
+                            
+                                <li>🛍️ <strong>Immersion au marché local</strong>: Plongez dans l'ambiance colorée et animée du marché de Mompox. C'est l'endroit idéal pour découvrir les fruits exotiques, les légumes frais et les produits artisanaux locaux, et observer la vie quotidienne.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🥭 Fruits tropicaux</p>
+                                <p class="text-gray-700">Ne manquez pas de goûter aux fruits inconnus en Europe au marché. Demandez conseil aux vendeurs, ils seront ravis de vous faire découvrir leurs saveurs.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌳 Plaza de la Inmaculada</p>
+                                <p class="text-gray-700">Cette place est un lieu de vie agréable, avec ses arbres centenaires et ses bancs. Idéal pour une pause à l'ombre et observer les passants.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Le Fleuve et ses Secrets</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Le Río Magdalena est l'âme de Mompox, une voie de communication vitale et une source de vie. Cette journée est dédiée à l'exploration de ses rives, de ses affluents et de la faune qu'il abrite lors d'une excursion en lancha. Terminez la journée par un coucher de soleil spectaculaire sur le fleuve.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Excursion en lancha sur le Río Magdalena</strong>: Embarquez pour une balade en bateau traditionnel pour découvrir les paysages fluviaux, les villages de pêcheurs et la végétation luxuriante qui bordent le fleuve.</li>
+                            
+                                <li>🐦 <strong>Observation de la faune fluviale</strong>: Gardez l'œil ouvert pour apercevoir des oiseaux exotiques, des caïmans et d'autres animaux qui peuplent les rives et les marécages du Magdalena.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌅 Coucher de soleil</p>
+                                <p class="text-gray-700">Les couchers de soleil sur le Río Magdalena sont légendaires. Assurez-vous d'être sur la Albarrada ou sur une lancha pour en profiter pleinement.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦟 Anti-moustiques</p>
+                                <p class="text-gray-700">Prévoyez un bon répulsif, surtout en fin de journée et lors des excursions fluviales, car les moustiques peuvent être nombreux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Saveurs Locales et Traditions Culinaires</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Goûter Mompox, c'est découvrir une cuisine riche en saveurs, héritage des traditions afro-caribéennes et espagnoles. Participez à un cours de cuisine pour apprendre les secrets des plats locaux et dégustez les fameuses douceurs momposinas. La journée se termine par une immersion dans la musique traditionnelle.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>👨‍🍳 <strong>Cours de cuisine momposina</strong>: Apprenez à préparer des plats typiques comme le sancocho de pescado (soupe de poisson), le riz à la noix de coco ou les butifarras (saucisses locales) avec un chef local.</li>
+                            
+                                <li>🍰 <strong>Dégustation de dulces (douceurs locales)</strong>: Mompox est réputée pour ses sucreries artisanales, notamment les 'dulces de leche' et les 'bizcochos'. Flânez dans les rues pour trouver les meilleures adresses.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎶 Musique traditionnelle</p>
+                                <p class="text-gray-700">Le soir, cherchez des lieux où la musique Cumbia ou Vallenato est jouée en direct. C'est une excellente façon de s'immerger dans la culture locale.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌶️ Épices locales</p>
+                                <p class="text-gray-700">La cuisine colombienne n'est généralement pas très épicée, mais vous trouverez des sauces piquantes locales si vous aimez relever vos plats.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Les Églises et l'Architecture Religieuse</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox est un véritable musée à ciel ouvert avec ses nombreuses églises, chacune racontant une part de son histoire dévote et architecturale. Prenez le temps d'explorer ces édifices sacrés, témoins du passé colonial et de la ferveur religieuse de la ville. Une journée contemplative et riche en découvertes.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>⛪ <strong>Visite de l'Église San Francisco</strong>: Admirez cette église du XVIe siècle, l'une des plus anciennes de Mompox, avec son architecture imposante et son cloître paisible. Ses fresques murales sont particulièrement notables.</li>
+                            
+                                <li>⛪ <strong>Exploration de l'Église Santo Domingo</strong>: Découvrez cette église au style plus sobre, mais non moins charmante, et son rôle historique dans la vie religieuse de la ville. Son intérieur recèle des trésors cachés.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🙏 Respect des lieux</p>
+                                <p class="text-gray-700">Lors de la visite des églises, veillez à adopter une tenue respectueuse (épaules et genoux couverts) et à maintenir un comportement discret.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🖼️ Art religieux</p>
+                                <p class="text-gray-700">De nombreuses églises abritent des statues, des tableaux et des autels d'une grande valeur artistique et historique. Prenez le temps d'observer les détails.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Les Légendes et l'Imaginaire Momposino</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox est imprégnée de légendes et d'histoires fascinantes qui se transmettent de génération en génération. Cette journée vous invite à explorer l'imaginaire local, depuis le cimetière, témoin silencieux du passé, jusqu'aux contes et danses qui animent les soirées. Une immersion dans l'âme mystique de Mompox.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>📖 <strong>Visite du Cementerio Municipal</strong>: Ce cimetière est un lieu de promenade fascinant, avec ses mausolées anciens et ses sculptures. Il raconte une partie de l'histoire de Mompox à travers les vies de ses habitants.</li>
+                            
+                                <li>🎭 <strong>Spectacle de contes ou de danse locale</strong>: Renseignez-vous sur les événements culturels du soir. Il est parfois possible d'assister à des représentations de contes ou de danses traditionnelles qui mettent en scène les légendes locales.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👻 Histoires de fantômes</p>
+                                <p class="text-gray-700">Mompox est réputée pour ses histoires de fantômes et de personnages mystérieux. Demandez aux habitants, ils se feront un plaisir de vous raconter quelques anecdotes.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌌 Balade nocturne guidée</p>
+                                <p class="text-gray-700">Certains guides proposent des balades nocturnes thématiques sur les légendes de Mompox. Une expérience unique pour découvrir la ville sous un autre jour.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Détente et Reconnexion</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après plusieurs jours d'exploration intense, cette journée est dédiée au repos et à la reconnexion avec soi-même et l'environnement paisible de Mompox. Profitez de la tranquillité de votre hôtel, lisez un livre dans un patio ombragé ou offrez-vous un moment de bien-être. Ralentir pour mieux apprécier.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏊‍♀️ <strong>Détente à la piscine de l'hôtel</strong>: Si votre hôtel en dispose, profitez de la piscine pour vous rafraîchir et vous détendre sous le soleil momposino. C'est un luxe appréciable sous cette chaleur.</li>
+                            
+                                <li>📚 <strong>Lecture dans un patio colonial</strong>: Trouvez un coin tranquille dans un patio verdoyant, avec un bon livre et une boisson fraîche. Laissez le temps s'écouler au rythme lent de Mompox.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💆‍♀️ Massage traditionnel</p>
+                                <p class="text-gray-700">Certains hôtels ou centres proposent des massages relaxants. C'est l'occasion de se ressourcer et de relâcher les tensions.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☕ Pause café</p>
+                                <p class="text-gray-700">Dégustez un excellent café colombien dans l'un des petits cafés du centre, en observant la vie locale.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Les Alentours de Mompox</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aventurez-vous au-delà des rues pavées de Mompox pour découvrir la nature environnante et les petits villages accessibles par le fleuve. Une excursion dans les lagunes et les marécages vous offrira une perspective différente sur la région, sa biodiversité et la vie de ses habitants, souvent pêcheurs.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏞️ <strong>Excursion vers la Ciénaga de Pijiño</strong>: Organisez une sortie en bateau vers cette grande lagune pour explorer l'écosystème unique des zones humides, observer les oiseaux et la flore aquatique. C'est une immersion totale dans la nature.</li>
+                            
+                                <li>🎣 <strong>Rencontre avec des pêcheurs locaux</strong>: Profitez de l'excursion pour échanger avec les communautés de pêcheurs qui vivent en harmonie avec le fleuve. Découvrez leurs techniques traditionnelles et leur mode de vie.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌿 Écotourisme</p>
+                                <p class="text-gray-700">Ces excursions sont souvent organisées par des guides locaux, ce qui permet de soutenir l'économie des communautés et d'obtenir des informations précieuses sur la faune et la flore.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💧 Hydratation</p>
+                                <p class="text-gray-700">Pensez à emporter beaucoup d'eau pour cette excursion, car la chaleur et l'humidité peuvent être intenses.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">L'Artisanat au Quotidien</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox ne se limite pas au filigrane. Cette journée est dédiée à la découverte d'autres formes d'artisanat local. Observez les artisans travailler, comprenez leurs techniques ancestrales et, pourquoi pas, participez à un atelier pour créer votre propre pièce. Une expérience créative et authentique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🎨 <strong>Atelier de poterie ou vannerie</strong>: Renseignez-vous sur les ateliers disponibles pour apprendre les techniques de poterie ou de vannerie, souvent réalisées avec des matériaux naturels de la région. C'est une belle façon de s'immerger dans l'artisanat local.</li>
+                            
+                                <li>🛍️ <strong>Achat de souvenirs artisanaux</strong>: Flânez dans les petites boutiques pour trouver d'autres souvenirs uniques, comme des hamacs colorés, des objets en bois sculpté ou des textiles tissés à la main.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤝 Soutien local</p>
+                                <p class="text-gray-700">Acheter directement auprès des artisans permet de soutenir leur travail et de valoriser leur savoir-faire ancestral.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗣️ Échange culturel</p>
+                                <p class="text-gray-700">Les artisans sont souvent ravis de partager leur passion. N'hésitez pas à poser des questions sur leurs techniques et l'histoire de leur art.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">La Vie Culturelle et les Musées</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox, ville d'histoire et de culture, offre plusieurs petits musées et centres culturels pour approfondir vos connaissances sur son passé et ses traditions. Cette journée vous invite à explorer ces lieux de savoir, témoins de la richesse artistique et religieuse de la ville. Une immersion intellectuelle et inspirante.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🖼️ <strong>Visite du Museo de Arte Religioso</strong>: Situé dans l'ancienne église de San Juan de Dios, ce musée abrite une collection impressionnante d'objets sacrés, de peintures et de sculptures datant de l'époque coloniale, illustrant la ferveur religieuse de Mompox.</li>
+                            
+                                <li>📚 <strong>Exploration de la Casa de la Cultura</strong>: Ce centre culturel propose souvent des expositions temporaires, des ateliers et des informations sur les événements artistiques locaux. C'est un bon point de contact avec la vie culturelle actuelle de Mompox.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗓️ Événements locaux</p>
+                                <p class="text-gray-700">Renseignez-vous à la Casa de la Cultura sur les éventuels concerts, expositions ou festivals qui pourraient avoir lieu pendant votre séjour.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Accessibilité</p>
+                                <p class="text-gray-700">Tous ces lieux sont situés dans le centre historique et sont facilement accessibles à pied, permettant une exploration agréable.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-13" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 13</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Revoir ses Coups de Cœur</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Cette journée est l'occasion de revisiter les lieux qui vous ont le plus marqué, d'approfondir une visite ou simplement de s'asseoir et d'observer la vie momposina. Profitez de ces derniers moments pour capturer des images, déguster vos plats préférés ou simplement vous imprégner une dernière fois de l'atmosphère unique de la ville. Une journée de flânerie et de souvenirs.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♂️ <strong>Re-visite de la Plaza Bolívar et de ses environs</strong>: Retournez sur la place principale pour admirer les statues, les arbres centenaires et l'ambiance animée. C'est un excellent endroit pour observer les habitants et les vendeurs.</li>
+                            
+                                <li>🍦 <strong>Dégustation de glaces artisanales</strong>: Mompox est réputée pour ses glaces et sorbets aux saveurs exotiques. C'est une pause rafraîchissante et gourmande à ne pas manquer.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour13.jpg" class="w-full h-64 object-cover" alt="Jour 13">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Derniers achats</p>
+                                <p class="text-gray-700">Profitez-en pour faire vos derniers achats de souvenirs ou de produits locaux que vous auriez repérés.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Meilleures photos</p>
+                                <p class="text-gray-700">Les heures du matin et de fin d'après-midi offrent les meilleures lumières pour la photographie des rues et des bâtiments coloniaux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-14" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 14</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Derniers Instants et Préparatifs</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de vos dernières heures dans cette ville hors du temps. Faites les ultimes emplettes, savourez un dernier repas typique et imprégnez-vous une dernière fois de l'atmosphère sereine de Mompox. Préparez-vous doucement au départ, en emportant avec vous les précieux souvenirs de ce voyage unique. Un adieu doux et mémorable.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🎁 <strong>Derniers achats de souvenirs</strong>: Parcourez une dernière fois les boutiques pour trouver les cadeaux parfaits ou les objets que vous n'auriez pas encore achetés.</li>
+                            
+                                <li>🌅 <strong>Dernier coucher de soleil sur le fleuve</strong>: Offrez-vous un ultime spectacle en admirant le soleil se coucher sur le Río Magdalena, un moment de pure magie et de contemplation.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour14.jpg" class="w-full h-64 object-cover" alt="Jour 14">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📦 Préparation des bagages</p>
+                                <p class="text-gray-700">Commencez à préparer vos affaires pour le départ du lendemain, en vous assurant de ne rien oublier.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💌 Cartes postales</p>
+                                <p class="text-gray-700">Envoyez quelques cartes postales depuis Mompox pour partager un peu de sa magie avec vos proches.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-15" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 15</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Mompox</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Il est temps de quitter Mompox, mais vous emportez avec vous le souvenir d'une ville où le temps semble s'être arrêté, un véritable voyage dans le passé. Le trajet retour est l'occasion de repenser à toutes les découvertes et les rencontres qui ont jalonné votre séjour. Un départ empreint de nostalgie et de gratitude.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🧳 <strong>Préparation finale du départ</strong>: Prenez un dernier petit-déjeuner typique et assurez-vous que tout est prêt pour votre transfert.</li>
+                            
+                                <li>🚌 <strong>Transfert vers l'aéroport</strong>: Départ de Mompox vers l'aéroport de Corozal ou Sincelejo pour prendre votre vol de correspondance vers une grande ville colombienne, puis votre vol international.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/mompox_jour15.jpg" class="w-full h-64 object-cover" alt="Jour 15">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Temps de trajet</p>
+                                <p class="text-gray-700">Prévoyez suffisamment de temps pour le trajet terrestre vers l'aéroport, les retards sont possibles.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">✈️ Confirmation des vols</p>
+                                <p class="text-gray-700">Vérifiez les horaires de vos vols la veille de votre départ pour éviter toute surprise.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>💴</span> Budget
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget vol: </strong>1200€/pers (A/R Paris-Cartagena + vol interne + transfert terrestre vers Mompox)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget transports: </strong>250€/pers (Moto-taxis, lanchas, excursions fluviales locales à Mompox)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget repas: </strong>500€/pers (3 repas/jour, restaurants locaux et quelques plus élaborés)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget logement: </strong>900€/pers (14 nuits en hôtel de charme ou posada coloniale)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget activités: </strong>350€/pers (Entrées musées, ateliers, excursions fluviales, cours de cuisine)</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de Décembre à Mars et Juillet à Août.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌡️ :</strong> Les températures à Mompox sont chaudes et humides toute l'année (28-35°C). Prévoir vêtements légers en coton et chapeau.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est le Peso Colombien (COP). Les cartes sont acceptées dans les grands hôtels, mais le liquide est essentiel pour les petits commerces et transports.</li>
+                    
+                        <li><strong>🛵 :</strong> À Mompox, les moto-taxis et les pousse-pousse sont les principaux moyens de transport. Négociez toujours le prix avant de monter.</li>
+                    
+                        <li><strong>💉 :</strong> Consultez votre médecin pour les vaccins (fièvre jaune) et prévoyez un répulsif anti-moustiques efficace.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Mompox/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://colombia.travel/fr" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Tourisme Colombie</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/fr/co/mompox/7074/weather-forecast/7074" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌤️ Météo Mompox</strong></a></li>
+                    
+                        <li><a href="https://www.redbus.co/bus-tickets/mompox" target="_blank" class="hover:underline flex items-center gap-2"><strong>🚌 RedBus Colombie</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Mompox</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
