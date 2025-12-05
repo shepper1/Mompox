@@ -1,0 +1,442 @@
+{
+  "pays": "Colombie",
+  "drapeau": "🇨🇴",
+  "symbole": "🌴",
+  "titre": "Mompox Éternelle : Voyage au Cœur du Temps Suspendu",
+  "budget_total": "3200€",
+  "duree": "15 jours",
+  "temps_vol": "environ 20-24 heures (escales incluses)",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée à Mompox",
+      "legende": "Après un long voyage depuis Paris, vous atteignez enfin Mompox, une ville figée dans le temps. L'arrivée se fait en fin de journée, permettant une installation sereine et une première immersion douce dans l'ambiance coloniale. Laissez-vous bercer par le calme de la nuit momposina.",
+      "lieu": "Mompox",
+      "activites": [
+        "🛬 <strong>Arrivée à Mompox</strong>: Transfert depuis l'aéroport le plus proche (Corozal ou Sincelejo) vers votre hôtel à Mompox. Le trajet en voiture ou en bus est une première découverte des paysages ruraux.",
+        "🛏️ <strong>Installation à l'hôtel</strong>: Prenez le temps de vous installer dans votre hébergement, souvent une charmante maison coloniale restaurée, et de vous rafraîchir après le voyage."
+      ],
+      "illustration": "mompox_jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Accès à Mompox",
+          "texte": "Mompox est isolée. Le plus simple est de voler de Carthagène ou Bogotá vers Corozal (CZL) ou Sincelejo (SJE), puis de prendre un taxi partagé ou un bus pour Mompox (environ 3-4h)."
+        },
+        {
+          "symbole": "🌙",
+          "titre": "Première impression",
+          "texte": "Le soir, les rues de Mompox s'animent d'une douce lumière. Profitez d'une courte balade pour ressentir l'atmosphère paisible."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "⛪",
+      "titre": "Immersion Douce dans le Passé",
+      "legende": "Réveillez-vous au son des cloches et des chants d'oiseaux, typiques de Mompox. Cette journée est dédiée à une première exploration tranquille du centre historique, classé au patrimoine mondial de l'UNESCO, en se laissant porter par son rythme unique. Découvrez les places ombragées et les façades colorées.",
+      "lieu": "Mompox",
+      "activites": [
+        "🚶‍♀️ <strong>Flânerie matinale dans le centre historique</strong>: Perdez-vous dans les ruelles pavées, admirez l'architecture coloniale et les balcons fleuris qui font le charme de Mompox. C'est l'occasion de s'imprégner de l'ambiance.",
+        "⛪ <strong>Visite de l'Église Santa Bárbara</strong>: Cette église emblématique, avec son clocher octogonal unique et sa façade baroque, est un incontournable. Elle offre une vue magnifique sur le fleuve Magdalena."
+      ],
+      "illustration": "mompox_jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "☀️",
+          "titre": "Conseil vestimentaire",
+          "texte": "Il fait chaud et humide à Mompox. Privilégiez des vêtements légers en coton, un chapeau et de la crème solaire pour les balades en journée."
+        },
+        {
+          "symbole": "🥤",
+          "titre": "Rafraîchissement",
+          "texte": "Goûtez aux jus de fruits frais locaux (lulo, maracuyá, guanábana) vendus partout. Ils sont délicieux et désaltérants."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "💍",
+      "titre": "L'Héritage Colonial et l'Artisanat du Filigrane",
+      "legende": "Plongez plus profondément dans l'histoire architecturale de Mompox et découvrez l'art ancestral du filigrane d'argent, une tradition qui a fait la renommée de la ville. Observez les artisans à l'œuvre et admirez la finesse de leurs créations. La journée se termine par un dîner au bord du fleuve.",
+      "lieu": "Mompox",
+      "activites": [
+        "🏛️ <strong>Exploration approfondie du Centre Historique</strong>: Poursuivez la découverte des rues principales comme la Calle Real del Medio et la Calle de la Albarrada, en admirant les détails architecturaux des maisons coloniales et leurs patios intérieurs.",
+        "💍 <strong>Découverte de l'art du filigrane d'argent</strong>: Visitez un atelier de joaillerie pour observer les artisans momposinos transformer de fins fils d'argent en bijoux délicats, une technique transmise de génération en génération."
+      ],
+      "illustration": "mompox_jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Souvenirs",
+          "texte": "Les bijoux en filigrane sont le souvenir emblématique de Mompox. N'hésitez pas à discuter avec les artisans pour comprendre leur travail et trouver la pièce parfaite."
+        },
+        {
+          "symbole": "🍽️",
+          "titre": "Dîner au bord du fleuve",
+          "texte": "De nombreux restaurants offrent des tables avec vue sur le Río Magdalena. C'est une expérience magique au coucher du soleil."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🚶‍♂️",
+      "titre": "Sur les Traces de Bolívar et la Vie Quotidienne",
+      "legende": "Suivez les pas de Simón Bolívar, qui a séjourné à Mompox et y a recruté une partie de son armée. Imprégnez-vous de la vie quotidienne des Momposinos en vous mêlant à l'effervescence du marché local et en vous détendant sur l'une des places ombragées de la ville. Une journée riche en rencontres et en saveurs.",
+      "lieu": "Mompox",
+      "activites": [
+        "🚶‍♂️ <strong>Visite de la Casa de Bolívar</strong>: Explorez cette maison historique où Simón Bolívar aurait résidé. Bien que n'étant pas un musée formel, elle témoigne de l'importance de Mompox dans l'histoire de l'indépendance colombienne.",
+        "🛍️ <strong>Immersion au marché local</strong>: Plongez dans l'ambiance colorée et animée du marché de Mompox. C'est l'endroit idéal pour découvrir les fruits exotiques, les légumes frais et les produits artisanaux locaux, et observer la vie quotidienne."
+      ],
+      "illustration": "mompox_jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🥭",
+          "titre": "Fruits tropicaux",
+          "texte": "Ne manquez pas de goûter aux fruits inconnus en Europe au marché. Demandez conseil aux vendeurs, ils seront ravis de vous faire découvrir leurs saveurs."
+        },
+        {
+          "symbole": "🌳",
+          "titre": "Plaza de la Inmaculada",
+          "texte": "Cette place est un lieu de vie agréable, avec ses arbres centenaires et ses bancs. Idéal pour une pause à l'ombre et observer les passants."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🛶",
+      "titre": "Le Fleuve et ses Secrets",
+      "legende": "Le Río Magdalena est l'âme de Mompox, une voie de communication vitale et une source de vie. Cette journée est dédiée à l'exploration de ses rives, de ses affluents et de la faune qu'il abrite lors d'une excursion en lancha. Terminez la journée par un coucher de soleil spectaculaire sur le fleuve.",
+      "lieu": "Mompox",
+      "activites": [
+        "🛶 <strong>Excursion en lancha sur le Río Magdalena</strong>: Embarquez pour une balade en bateau traditionnel pour découvrir les paysages fluviaux, les villages de pêcheurs et la végétation luxuriante qui bordent le fleuve.",
+        "🐦 <strong>Observation de la faune fluviale</strong>: Gardez l'œil ouvert pour apercevoir des oiseaux exotiques, des caïmans et d'autres animaux qui peuplent les rives et les marécages du Magdalena."
+      ],
+      "illustration": "mompox_jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🌅",
+          "titre": "Coucher de soleil",
+          "texte": "Les couchers de soleil sur le Río Magdalena sont légendaires. Assurez-vous d'être sur la Albarrada ou sur une lancha pour en profiter pleinement."
+        },
+        {
+          "symbole": "🦟",
+          "titre": "Anti-moustiques",
+          "texte": "Prévoyez un bon répulsif, surtout en fin de journée et lors des excursions fluviales, car les moustiques peuvent être nombreux."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "👨‍🍳",
+      "titre": "Saveurs Locales et Traditions Culinaires",
+      "legende": "Goûter Mompox, c'est découvrir une cuisine riche en saveurs, héritage des traditions afro-caribéennes et espagnoles. Participez à un cours de cuisine pour apprendre les secrets des plats locaux et dégustez les fameuses douceurs momposinas. La journée se termine par une immersion dans la musique traditionnelle.",
+      "lieu": "Mompox",
+      "activites": [
+        "👨‍🍳 <strong>Cours de cuisine momposina</strong>: Apprenez à préparer des plats typiques comme le sancocho de pescado (soupe de poisson), le riz à la noix de coco ou les butifarras (saucisses locales) avec un chef local.",
+        "🍰 <strong>Dégustation de dulces (douceurs locales)</strong>: Mompox est réputée pour ses sucreries artisanales, notamment les 'dulces de leche' et les 'bizcochos'. Flânez dans les rues pour trouver les meilleures adresses."
+      ],
+      "illustration": "mompox_jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🎶",
+          "titre": "Musique traditionnelle",
+          "texte": "Le soir, cherchez des lieux où la musique Cumbia ou Vallenato est jouée en direct. C'est une excellente façon de s'immerger dans la culture locale."
+        },
+        {
+          "symbole": "🌶️",
+          "titre": "Épices locales",
+          "texte": "La cuisine colombienne n'est généralement pas très épicée, mais vous trouverez des sauces piquantes locales si vous aimez relever vos plats."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "⛪",
+      "titre": "Les Églises et l'Architecture Religieuse",
+      "legende": "Mompox est un véritable musée à ciel ouvert avec ses nombreuses églises, chacune racontant une part de son histoire dévote et architecturale. Prenez le temps d'explorer ces édifices sacrés, témoins du passé colonial et de la ferveur religieuse de la ville. Une journée contemplative et riche en découvertes.",
+      "lieu": "Mompox",
+      "activites": [
+        "⛪ <strong>Visite de l'Église San Francisco</strong>: Admirez cette église du XVIe siècle, l'une des plus anciennes de Mompox, avec son architecture imposante et son cloître paisible. Ses fresques murales sont particulièrement notables.",
+        "⛪ <strong>Exploration de l'Église Santo Domingo</strong>: Découvrez cette église au style plus sobre, mais non moins charmante, et son rôle historique dans la vie religieuse de la ville. Son intérieur recèle des trésors cachés."
+      ],
+      "illustration": "mompox_jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🙏",
+          "titre": "Respect des lieux",
+          "texte": "Lors de la visite des églises, veillez à adopter une tenue respectueuse (épaules et genoux couverts) et à maintenir un comportement discret."
+        },
+        {
+          "symbole": "🖼️",
+          "titre": "Art religieux",
+          "texte": "De nombreuses églises abritent des statues, des tableaux et des autels d'une grande valeur artistique et historique. Prenez le temps d'observer les détails."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "📖",
+      "titre": "Les Légendes et l'Imaginaire Momposino",
+      "legende": "Mompox est imprégnée de légendes et d'histoires fascinantes qui se transmettent de génération en génération. Cette journée vous invite à explorer l'imaginaire local, depuis le cimetière, témoin silencieux du passé, jusqu'aux contes et danses qui animent les soirées. Une immersion dans l'âme mystique de Mompox.",
+      "lieu": "Mompox",
+      "activites": [
+        "📖 <strong>Visite du Cementerio Municipal</strong>: Ce cimetière est un lieu de promenade fascinant, avec ses mausolées anciens et ses sculptures. Il raconte une partie de l'histoire de Mompox à travers les vies de ses habitants.",
+        "🎭 <strong>Spectacle de contes ou de danse locale</strong>: Renseignez-vous sur les événements culturels du soir. Il est parfois possible d'assister à des représentations de contes ou de danses traditionnelles qui mettent en scène les légendes locales."
+      ],
+      "illustration": "mompox_jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "👻",
+          "titre": "Histoires de fantômes",
+          "texte": "Mompox est réputée pour ses histoires de fantômes et de personnages mystérieux. Demandez aux habitants, ils se feront un plaisir de vous raconter quelques anecdotes."
+        },
+        {
+          "symbole": "🌌",
+          "titre": "Balade nocturne guidée",
+          "texte": "Certains guides proposent des balades nocturnes thématiques sur les légendes de Mompox. Une expérience unique pour découvrir la ville sous un autre jour."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🧘‍♀️",
+      "titre": "Détente et Reconnexion",
+      "legende": "Après plusieurs jours d'exploration intense, cette journée est dédiée au repos et à la reconnexion avec soi-même et l'environnement paisible de Mompox. Profitez de la tranquillité de votre hôtel, lisez un livre dans un patio ombragé ou offrez-vous un moment de bien-être. Ralentir pour mieux apprécier.",
+      "lieu": "Mompox",
+      "activites": [
+        "🏊‍♀️ <strong>Détente à la piscine de l'hôtel</strong>: Si votre hôtel en dispose, profitez de la piscine pour vous rafraîchir et vous détendre sous le soleil momposino. C'est un luxe appréciable sous cette chaleur.",
+        "📚 <strong>Lecture dans un patio colonial</strong>: Trouvez un coin tranquille dans un patio verdoyant, avec un bon livre et une boisson fraîche. Laissez le temps s'écouler au rythme lent de Mompox."
+      ],
+      "illustration": "mompox_jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "💆‍♀️",
+          "titre": "Massage traditionnel",
+          "texte": "Certains hôtels ou centres proposent des massages relaxants. C'est l'occasion de se ressourcer et de relâcher les tensions."
+        },
+        {
+          "symbole": "☕",
+          "titre": "Pause café",
+          "texte": "Dégustez un excellent café colombien dans l'un des petits cafés du centre, en observant la vie locale."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🏞️",
+      "titre": "Les Alentours de Mompox",
+      "legende": "Aventurez-vous au-delà des rues pavées de Mompox pour découvrir la nature environnante et les petits villages accessibles par le fleuve. Une excursion dans les lagunes et les marécages vous offrira une perspective différente sur la région, sa biodiversité et la vie de ses habitants, souvent pêcheurs.",
+      "lieu": "Alentours de Mompox",
+      "activites": [
+        "🏞️ <strong>Excursion vers la Ciénaga de Pijiño</strong>: Organisez une sortie en bateau vers cette grande lagune pour explorer l'écosystème unique des zones humides, observer les oiseaux et la flore aquatique. C'est une immersion totale dans la nature.",
+        "🎣 <strong>Rencontre avec des pêcheurs locaux</strong>: Profitez de l'excursion pour échanger avec les communautés de pêcheurs qui vivent en harmonie avec le fleuve. Découvrez leurs techniques traditionnelles et leur mode de vie."
+      ],
+      "illustration": "mompox_jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "🌿",
+          "titre": "Écotourisme",
+          "texte": "Ces excursions sont souvent organisées par des guides locaux, ce qui permet de soutenir l'économie des communautés et d'obtenir des informations précieuses sur la faune et la flore."
+        },
+        {
+          "symbole": "💧",
+          "titre": "Hydratation",
+          "texte": "Pensez à emporter beaucoup d'eau pour cette excursion, car la chaleur et l'humidité peuvent être intenses."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🎨",
+      "titre": "L'Artisanat au Quotidien",
+      "legende": "Mompox ne se limite pas au filigrane. Cette journée est dédiée à la découverte d'autres formes d'artisanat local. Observez les artisans travailler, comprenez leurs techniques ancestrales et, pourquoi pas, participez à un atelier pour créer votre propre pièce. Une expérience créative et authentique.",
+      "lieu": "Mompox",
+      "activites": [
+        "🎨 <strong>Atelier de poterie ou vannerie</strong>: Renseignez-vous sur les ateliers disponibles pour apprendre les techniques de poterie ou de vannerie, souvent réalisées avec des matériaux naturels de la région. C'est une belle façon de s'immerger dans l'artisanat local.",
+        "🛍️ <strong>Achat de souvenirs artisanaux</strong>: Flânez dans les petites boutiques pour trouver d'autres souvenirs uniques, comme des hamacs colorés, des objets en bois sculpté ou des textiles tissés à la main."
+      ],
+      "illustration": "mompox_jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "🤝",
+          "titre": "Soutien local",
+          "texte": "Acheter directement auprès des artisans permet de soutenir leur travail et de valoriser leur savoir-faire ancestral."
+        },
+        {
+          "symbole": "🗣️",
+          "titre": "Échange culturel",
+          "texte": "Les artisans sont souvent ravis de partager leur passion. N'hésitez pas à poser des questions sur leurs techniques et l'histoire de leur art."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "🖼️",
+      "titre": "La Vie Culturelle et les Musées",
+      "legende": "Mompox, ville d'histoire et de culture, offre plusieurs petits musées et centres culturels pour approfondir vos connaissances sur son passé et ses traditions. Cette journée vous invite à explorer ces lieux de savoir, témoins de la richesse artistique et religieuse de la ville. Une immersion intellectuelle et inspirante.",
+      "lieu": "Mompox",
+      "activites": [
+        "🖼️ <strong>Visite du Museo de Arte Religioso</strong>: Situé dans l'ancienne église de San Juan de Dios, ce musée abrite une collection impressionnante d'objets sacrés, de peintures et de sculptures datant de l'époque coloniale, illustrant la ferveur religieuse de Mompox.",
+        "📚 <strong>Exploration de la Casa de la Cultura</strong>: Ce centre culturel propose souvent des expositions temporaires, des ateliers et des informations sur les événements artistiques locaux. C'est un bon point de contact avec la vie culturelle actuelle de Mompox."
+      ],
+      "illustration": "mompox_jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "🗓️",
+          "titre": "Événements locaux",
+          "texte": "Renseignez-vous à la Casa de la Cultura sur les éventuels concerts, expositions ou festivals qui pourraient avoir lieu pendant votre séjour."
+        },
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Accessibilité",
+          "texte": "Tous ces lieux sont situés dans le centre historique et sont facilement accessibles à pied, permettant une exploration agréable."
+        }
+      ]
+    },
+    {
+      "jour": 13,
+      "symbole": "📸",
+      "titre": "Revoir ses Coups de Cœur",
+      "legende": "Cette journée est l'occasion de revisiter les lieux qui vous ont le plus marqué, d'approfondir une visite ou simplement de s'asseoir et d'observer la vie momposina. Profitez de ces derniers moments pour capturer des images, déguster vos plats préférés ou simplement vous imprégner une dernière fois de l'atmosphère unique de la ville. Une journée de flânerie et de souvenirs.",
+      "lieu": "Mompox",
+      "activites": [
+        "🚶‍♂️ <strong>Re-visite de la Plaza Bolívar et de ses environs</strong>: Retournez sur la place principale pour admirer les statues, les arbres centenaires et l'ambiance animée. C'est un excellent endroit pour observer les habitants et les vendeurs.",
+        "🍦 <strong>Dégustation de glaces artisanales</strong>: Mompox est réputée pour ses glaces et sorbets aux saveurs exotiques. C'est une pause rafraîchissante et gourmande à ne pas manquer."
+      ],
+      "illustration": "mompox_jour13.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Derniers achats",
+          "texte": "Profitez-en pour faire vos derniers achats de souvenirs ou de produits locaux que vous auriez repérés."
+        },
+        {
+          "symbole": "📸",
+          "titre": "Meilleures photos",
+          "texte": "Les heures du matin et de fin d'après-midi offrent les meilleures lumières pour la photographie des rues et des bâtiments coloniaux."
+        }
+      ]
+    },
+    {
+      "jour": 14,
+      "symbole": "🌅",
+      "titre": "Derniers Instants et Préparatifs",
+      "legende": "Profitez de vos dernières heures dans cette ville hors du temps. Faites les ultimes emplettes, savourez un dernier repas typique et imprégnez-vous une dernière fois de l'atmosphère sereine de Mompox. Préparez-vous doucement au départ, en emportant avec vous les précieux souvenirs de ce voyage unique. Un adieu doux et mémorable.",
+      "lieu": "Mompox",
+      "activites": [
+        "🎁 <strong>Derniers achats de souvenirs</strong>: Parcourez une dernière fois les boutiques pour trouver les cadeaux parfaits ou les objets que vous n'auriez pas encore achetés.",
+        "🌅 <strong>Dernier coucher de soleil sur le fleuve</strong>: Offrez-vous un ultime spectacle en admirant le soleil se coucher sur le Río Magdalena, un moment de pure magie et de contemplation."
+      ],
+      "illustration": "mompox_jour14.jpg",
+      "encarts": [
+        {
+          "symbole": "📦",
+          "titre": "Préparation des bagages",
+          "texte": "Commencez à préparer vos affaires pour le départ du lendemain, en vous assurant de ne rien oublier."
+        },
+        {
+          "symbole": "💌",
+          "titre": "Cartes postales",
+          "texte": "Envoyez quelques cartes postales depuis Mompox pour partager un peu de sa magie avec vos proches."
+        }
+      ]
+    },
+    {
+      "jour": 15,
+      "symbole": "✈️",
+      "titre": "Départ de Mompox",
+      "legende": "Il est temps de quitter Mompox, mais vous emportez avec vous le souvenir d'une ville où le temps semble s'être arrêté, un véritable voyage dans le passé. Le trajet retour est l'occasion de repenser à toutes les découvertes et les rencontres qui ont jalonné votre séjour. Un départ empreint de nostalgie et de gratitude.",
+      "lieu": "Mompox / Retour",
+      "activites": [
+        "🧳 <strong>Préparation finale du départ</strong>: Prenez un dernier petit-déjeuner typique et assurez-vous que tout est prêt pour votre transfert.",
+        "🚌 <strong>Transfert vers l'aéroport</strong>: Départ de Mompox vers l'aéroport de Corozal ou Sincelejo pour prendre votre vol de correspondance vers une grande ville colombienne, puis votre vol international."
+      ],
+      "illustration": "mompox_jour15.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Temps de trajet",
+          "texte": "Prévoyez suffisamment de temps pour le trajet terrestre vers l'aéroport, les retards sont possibles."
+        },
+        {
+          "symbole": "✈️",
+          "titre": "Confirmation des vols",
+          "texte": "Vérifiez les horaires de vos vols la veille de votre départ pour éviter toute surprise."
+        }
+      ]
+    }
+  ],
+  "detail_budget": [
+    {
+      "titre": "Budget vol:",
+      "legende": "1200€/pers (A/R Paris-Cartagena + vol interne + transfert terrestre vers Mompox)",
+      "symbole": "🛬"
+    },
+    {
+      "titre": "Budget transports:",
+      "legende": "250€/pers (Moto-taxis, lanchas, excursions fluviales locales à Mompox)",
+      "symbole": "🚆"
+    },
+    {
+      "titre": "Budget repas:",
+      "legende": "500€/pers (3 repas/jour, restaurants locaux et quelques plus élaborés)",
+      "symbole": "🥗"
+    },
+    {
+      "titre": "Budget logement:",
+      "legende": "900€/pers (14 nuits en hôtel de charme ou posada coloniale)",
+      "symbole": "🛏️"
+    },
+    {
+      "titre": "Budget activités:",
+      "legende": "350€/pers (Entrées musées, ateliers, excursions fluviales, cours de cuisine)",
+      "symbole": "🎭"
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de Décembre à Mars et Juillet à Août.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Les températures à Mompox sont chaudes et humides toute l'année (28-35°C). Prévoir vêtements légers en coton et chapeau.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La monnaie est le Peso Colombien (COP). Les cartes sont acceptées dans les grands hôtels, mais le liquide est essentiel pour les petits commerces et transports.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "À Mompox, les moto-taxis et les pousse-pousse sont les principaux moyens de transport. Négociez toujours le prix avant de monter.",
+      "symbole": "🛵"
+    },
+    {
+      "titre": "Consultez votre médecin pour les vaccins (fièvre jaune) et prévoyez un répulsif anti-moustiques efficace.",
+      "symbole": "💉"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Infos officielles et inspirations",
+      "titre": "Tourisme Colombie",
+      "url": "https://colombia.travel/fr",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Prévisions météo",
+      "titre": "Météo Mompox",
+      "url": "https://www.accuweather.com/fr/co/mompox/7074/weather-forecast/7074",
+      "symbole": "🌤️"
+    },
+    {
+      "legende": "Réservation de bus longue distance",
+      "titre": "RedBus Colombie",
+      "url": "https://www.redbus.co/bus-tickets/mompox",
+      "symbole": "🚌"
+    }
+  ]
+}
