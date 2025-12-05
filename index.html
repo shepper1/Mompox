@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mompox : L'Éternelle Rêveuse du Magdalena </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Mompox : L'Éternelle Rêveuse du Magdalena</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée à Carthagène, Porte des Caraïbes</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Immersion dans la Carthagène Coloniale</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Voyage vers la Perle du Magdalena : Mompox</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Mompox, un Voyage dans le Temps</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Artisanat d'Art et Histoires Locales</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Sur les Eaux du Magdalena et la Ciénaga</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 L'Âme de Mompox : Entre Vie et Sérénité</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Saveurs Locales et Douceur de Vivre</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Retour vers Carthagène, entre Terre et Mer</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Panoramas Historiques de Carthagène</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 Évasion Insulaire ou Douceur Caribéenne</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 Départ de Carthagène</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Mompox</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Mompox : L'Éternelle Rêveuse du Magdalena</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 12 jours uniquement</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2460€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 11h (vol international) + 6-8h (transfert interne) depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée à Carthagène, Porte des Caraïbes</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, Carthagène vous accueille avec sa chaleur tropicale et ses couleurs vibrantes. Prenez le temps de vous installer et de vous imprégner de l'ambiance unique de cette ville fortifiée, prélude à votre aventure colombienne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Arrivée à l'aéroport de Carthagène (CTG)</strong>: Récupérez vos bagages et prenez un taxi pour votre hôtel dans le quartier historique ou Getsemaní. Le trajet dure environ 15-20 minutes.</li>
+                            
+                                <li>🛏️ <strong>Installation à l'hôtel et détente</strong>: Profitez de l'après-midi pour vous reposer et vous rafraîchir après le vol. L'acclimatation est clé pour bien démarrer votre séjour.</li>
+                            
+                                <li>🚶‍♂️ <strong>Première balade dans le quartier de Getsemaní</strong>: Flânez dans les rues colorées de Getsemaní, admirez le street art vibrant et l'ambiance bohème. C'est l'endroit idéal pour une première immersion douce.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ À savoir</p>
+                                <p class="text-gray-700">L'aéroport Rafael Núñez (CTG) est très proche du centre historique de Carthagène. Les taxis sont nombreux et le prix est fixe selon la destination.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌡️ Climat</p>
+                                <p class="text-gray-700">Carthagène est chaude et humide toute l'année. Prévoyez des vêtements légers et de l'eau.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Immersion dans la Carthagène Coloniale</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongez au cœur de l'histoire de Carthagène, une ville inscrite au patrimoine mondial de l'UNESCO. Ses remparts imposants, ses places animées et ses balcons fleuris racontent des siècles d'aventures, de conquêtes et de culture caribéenne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♀️ <strong>Exploration de la Vieille Ville fortifiée</strong>: Perdez-vous dans les ruelles pavées, découvrez les places emblématiques comme la Plaza Bolívar et la Plaza Santo Domingo, et admirez l'architecture coloniale.</li>
+                            
+                                <li>🏛️ <strong>Visite du Palais de l'Inquisition</strong>: Explorez ce musée fascinant qui retrace l'histoire sombre de l'Inquisition en Colombie, avec son architecture baroque impressionnante et ses expositions détaillées.</li>
+                            
+                                <li>🌅 <strong>Coucher de soleil sur les remparts</strong>: Terminez votre journée en admirant un magnifique coucher de soleil depuis les remparts de la ville, une expérience inoubliable avec vue sur la mer des Caraïbes.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Astuce</p>
+                                <p class="text-gray-700">La Vieille Ville se parcourt idéalement à pied. Prévoyez de bonnes chaussures et de la crème solaire.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍹 Dégustation</p>
+                                <p class="text-gray-700">Goûtez aux jus de fruits frais vendus par les palenqueras ou un rafraîchissant cocktail au bord de la mer.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Voyage vers la Perle du Magdalena : Mompox</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui marque le début de votre périple vers Mompox, un voyage qui vous mènera à travers des paysages variés, des plaines fertiles aux rives du fleuve Magdalena. Préparez-vous à une immersion totale dans la Colombie profonde et authentique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚌 <strong>Transfert matinal vers Mompox</strong>: Prenez un bus ou une navette partagée depuis Carthagène. Le trajet est long (environ 6-8 heures) mais offre des vues pittoresques sur la campagne colombienne.</li>
+                            
+                                <li>🛏️ <strong>Installation à l'hôtel à Mompox</strong>: À votre arrivée, installez-vous dans votre hébergement, souvent une charmante maison coloniale restaurée, pour vous imprégner de l'atmosphère locale.</li>
+                            
+                                <li>🌙 <strong>Première découverte nocturne de Mompox</strong>: Profitez de la fraîcheur du soir pour une courte balade. Les rues éclairées par les lanternes révèlent une Mompox paisible et magique.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚠️ Conseil</p>
+                                <p class="text-gray-700">Le trajet vers Mompox est long et peut être cahoteux. Prévoyez des snacks, de l'eau et un coussin de voyage.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💰 Transport</p>
+                                <p class="text-gray-700">Les 'collectivos' (vans partagés) sont une option plus rapide et confortable que le bus public pour Mompox.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mompox, un Voyage dans le Temps</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox est une ville figée dans le temps, où l'histoire coloniale prend vie à chaque coin de rue. Ses églises majestueuses, ses places ombragées et son architecture préservée vous invitent à un voyage hors du commun, loin de l'agitation moderne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♂️ <strong>Exploration du centre historique de Mompox</strong>: Flânez le long du Paseo de la Albarrada, bordé de maisons coloniales. Admirez les façades colorées et les balcons en fer forgé qui font la renommée de la ville.</li>
+                            
+                                <li>⛪ <strong>Visite de l'Église Santa Bárbara</strong>: Découvrez cette église emblématique avec son clocher en forme de couronne et sa vue imprenable sur le fleuve Magdalena. Son architecture est unique en Colombie.</li>
+                            
+                                <li>⛪ <strong>Découverte de la Plaza de la Concepción et son église</strong>: Imprégnez-vous de l'ambiance de cette place centrale et visitez l'Église de l'Inmaculada Concepción, un autre joyau architectural de Mompox.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ À pied</p>
+                                <p class="text-gray-700">Mompox est une ville qui se découvre idéalement à pied ou à vélo. Les distances sont courtes et les rues sont calmes.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Photo</p>
+                                <p class="text-gray-700">L'Église Santa Bárbara est particulièrement photogénique au lever et au coucher du soleil.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Artisanat d'Art et Histoires Locales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox est non seulement un trésor architectural, mais aussi un centre vibrant d'artisanat, notamment pour sa filigrane d'or et d'argent. Rencontrez les artisans locaux et laissez-vous conter les histoires de cette ville intemporelle, imprégnée de légendes et de traditions.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>💍 <strong>Atelier de filigrane d'argent</strong>: Visitez un atelier et observez les artisans locaux créer de délicats bijoux en filigrane, une technique transmise de génération en génération. Vous pouvez même essayer de créer une petite pièce.</li>
+                            
+                                <li>📚 <strong>Visite de la Casa de la Cultura</strong>: Explorez ce centre culturel pour en apprendre davantage sur l'histoire, la musique et les traditions de Mompox. C'est un excellent moyen de comprendre l'âme de la ville.</li>
+                            
+                                <li>🚶‍♀️ <strong>Balade le long du Malecón au coucher du soleil</strong>: Profitez d'une promenade relaxante le long de la promenade du fleuve Magdalena. C'est un lieu privilégié pour observer la vie locale et les magnifiques teintes du ciel au crépuscule.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Souvenirs</p>
+                                <p class="text-gray-700">Les bijoux en filigrane de Mompox sont des souvenirs uniques et authentiques. N'hésitez pas à négocier les prix.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗣️ Langue</p>
+                                <p class="text-gray-700">Quelques notions d'espagnol seront très appréciées pour interagir avec les artisans et les habitants.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sur les Eaux du Magdalena et la Ciénaga</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Le fleuve Magdalena est l'âme de Mompox, une artère vitale qui a façonné son histoire et sa culture. Embarquez pour une aventure fluviale, explorez les paisibles marécages (ciénagas) et découvrez la faune et la flore luxuriantes de cette région isolée.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Excursion en bateau sur le fleuve Magdalena et la Ciénaga de Pijiño</strong>: Louez une lancha (petite embarcation) pour explorer les bras du fleuve et les marécages environnants. C'est une opportunité unique d'observer des oiseaux exotiques, des caïmans et la vie rurale.</li>
+                            
+                                <li>🌳 <strong>Observation de la faune et de la flore locales</strong>: Votre guide local vous aidera à repérer les espèces endémiques et à comprendre l'écosystème fragile de cette région humide. Un moment de pure immersion nature.</li>
+                            
+                                <li>🍽️ <strong>Déjeuner typique au bord du fleuve</strong>: Savourez un repas composé de poisson frais pêché dans le Magdalena, accompagné de riz à la noix de coco et de patacones, dans un restaurant simple avec vue sur l'eau.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection</p>
+                                <p class="text-gray-700">N'oubliez pas votre chapeau, vos lunettes de soleil et de la crème solaire pour l'excursion en bateau. Il fait très chaud sur l'eau.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦟 Moustiques</p>
+                                <p class="text-gray-700">Prévoyez un bon répulsif, surtout en fin de journée et lors des excursions fluviales.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">L'Âme de Mompox : Entre Vie et Sérénité</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Mompox offre une atmosphère d'une sérénité rare, où le temps semble s'être arrêté. Aujourd'hui, explorez des facettes plus intimes de la ville, de son cimetière pittoresque à ses marchés animés, témoins de la vie quotidienne et des traditions locales.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>⚰️ <strong>Visite du cimetière de Mompox</strong>: Ce cimetière est réputé pour ses mausolées colorés et ses anges sculptés. C'est un lieu surprenant et paisible, offrant un aperçu unique de la culture locale et de son rapport à la mort.</li>
+                            
+                                <li>🛍️ <strong>Découverte du marché local</strong>: Plongez dans l'effervescence du marché où les habitants achètent fruits, légumes et produits frais. C'est une explosion de couleurs et de saveurs, idéale pour goûter aux spécialités régionales.</li>
+                            
+                                <li>🧘‍♀️ <strong>Moment de détente et de lecture</strong>: Profitez de l'après-midi pour vous détendre dans un patio ombragé, lire un livre sur l'histoire de la Colombie ou simplement observer la vie locale passer à un rythme tranquille.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📖 Lecture</p>
+                                <p class="text-gray-700">Mompox a inspiré Gabriel García Márquez. Relire 'Cent ans de solitude' sur place est une expérience enrichissante.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍍 Saveurs</p>
+                                <p class="text-gray-700">Goûtez aux fruits tropicaux exotiques que vous trouverez au marché, comme le zapote ou le níspero.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Saveurs Locales et Douceur de Vivre</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après plusieurs jours d'exploration, cette journée est dédiée à l'approfondissement de la culture momposina à travers sa gastronomie et son art de vivre. Laissez-vous porter par la douceur ambiante et savourez chaque instant dans ce havre de paix.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🍳 <strong>Cours de cuisine colombienne (optionnel)</strong>: Participez à un cours pour apprendre à préparer des plats typiques de la région, comme le sancocho de pescado ou l'arroz con coco. Une expérience gustative et culturelle.</li>
+                            
+                                <li>🚲 <strong>Balade à vélo le long du fleuve</strong>: Louez un vélo pour explorer les environs de Mompox à votre rythme, en longeant le fleuve Magdalena et en découvrant des paysages bucoliques et des villages voisins.</li>
+                            
+                                <li>🎶 <strong>Soirée musicale ou dégustation de rhum</strong>: Terminez votre séjour à Mompox par une soirée décontractée, peut-être dans un bar local avec de la musique en direct, ou en dégustant un rhum colombien de qualité.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🥘 Gastronomie</p>
+                                <p class="text-gray-700">Ne quittez pas Mompox sans avoir goûté le 'queso de capa', un fromage local unique.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚲 Location</p>
+                                <p class="text-gray-700">De nombreux hôtels et petites boutiques proposent la location de vélos pour quelques milliers de pesos.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Retour vers Carthagène, entre Terre et Mer</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Il est temps de quitter la sérénité de Mompox pour retrouver l'effervescence de Carthagène. Le voyage de retour vous offrira une nouvelle perspective sur les paysages colombiens, avant de vous replonger dans l'ambiance vibrante de la cité caribéenne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚌 <strong>Transfert matinal de Mompox à Carthagène</strong>: Reprenez le chemin inverse, en bus ou en navette partagée. Prévoyez de partir tôt pour profiter de l'après-midi à Carthagène.</li>
+                            
+                                <li>🛏️ <strong>Installation à l'hôtel à Carthagène</strong>: Une fois arrivé, déposez vos affaires et profitez d'un moment de repos bien mérité après le trajet.</li>
+                            
+                                <li>🚶‍♀️ <strong>Soirée libre dans le quartier de Getsemaní</strong>: Dînez dans l'un des nombreux restaurants branchés de Getsemaní et profitez de l'ambiance festive des rues animées, avec ses musiciens et ses danseurs.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Timing</p>
+                                <p class="text-gray-700">Le trajet peut varier en durée. Il est préférable de ne pas prévoir d'activités trop contraignantes le jour de votre arrivée à Carthagène.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Dîner</p>
+                                <p class="text-gray-700">Getsemaní regorge d'options culinaires, des stands de street food aux restaurants gastronomiques.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Panoramas Historiques de Carthagène</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, explorez les hauteurs de Carthagène pour des vues imprenables sur la ville et la mer. Découvrez les fortifications qui ont protégé la cité des pirates et des envahisseurs, et laissez-vous émerveiller par la beauté de son architecture et de son histoire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏰 <strong>Visite du Castillo San Felipe de Barajas</strong>: Explorez cette impressionnante forteresse, chef-d'œuvre d'ingénierie militaire coloniale. Ses tunnels et ses remparts offrent une vue panoramique sur la ville.</li>
+                            
+                                <li>⛪ <strong>Ascension au Convento de la Popa</strong>: Montez jusqu'à ce monastère situé sur la plus haute colline de Carthagène. La vue à 360 degrés sur la ville, la mer et les îles est absolument spectaculaire.</li>
+                            
+                                <li>🛍️ <strong>Shopping de dernière minute ou artisanat local</strong>: Profitez de l'après-midi pour acheter des souvenirs dans les boutiques de la Vieille Ville ou au marché artisanal de Las Bóvedas.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Chaleur</p>
+                                <p class="text-gray-700">La visite du Castillo San Felipe peut être très chaude. Prévoyez de l'eau et faites-la le matin tôt.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚕 Transport</p>
+                                <p class="text-gray-700">Pour le Convento de la Popa, il est recommandé de prendre un taxi pour des raisons de sécurité et de commodité.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Évasion Insulaire ou Douceur Caribéenne</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Pour cette dernière journée complète, choisissez entre une escapade paradisiaque vers les îles Rosario ou une exploration plus approfondie des musées et plages urbaines de Carthagène. Une journée pour se détendre et profiter des charmes caribéens.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚤 <strong>Excursion aux îles Rosario (optionnel)</strong>: Embarquez pour une journée de rêve vers cet archipel aux eaux cristallines. Nagez, faites de la plongée avec tuba et détendez-vous sur les plages de sable blanc. Le déjeuner est souvent inclus.</li>
+                            
+                                <li>🖼️ <strong>Visite du Musée de l'Or Zenú</strong>: Si vous préférez rester en ville, découvrez les trésors précolombiens de la culture Zenú, avec une impressionnante collection d'objets en or et en céramique.</li>
+                            
+                                <li>🍹 <strong>Dîner d'adieu et dernière promenade</strong>: Savourez un dernier dîner mémorable dans l'un des restaurants gastronomiques de Carthagène, puis profitez d'une ultime balade nocturne dans la Vieille Ville illuminée.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🏝️ Excursion</p>
+                                <p class="text-gray-700">Réservez votre excursion aux îles Rosario à l'avance, auprès d'agences fiables ou directement au port.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💸 Frais</p>
+                                <p class="text-gray-700">Un 'impuesto portuario' (taxe portuaire) est à payer en espèces avant d'embarquer pour les îles Rosario.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Carthagène</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Toutes les bonnes choses ont une fin. Après avoir exploré les trésors coloniaux de Mompox et les charmes vibrants de Carthagène, il est temps de prendre votre vol de retour, la tête pleine de souvenirs inoubliables et l'âme enrichie par cette aventure colombienne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛍️ <strong>Derniers achats ou café matinal</strong>: Profitez de vos dernières heures pour acheter des souvenirs de dernière minute ou savourer un dernier café colombien sur une terrasse ensoleillée.</li>
+                            
+                                <li>🛬 <strong>Transfert vers l'aéroport de Carthagène (CTG)</strong>: En fonction de l'heure de votre vol, prenez un taxi pour l'aéroport. Prévoyez suffisamment de temps pour les formalités d'enregistrement et de sécurité.</li>
+                            
+                                <li>✈️ <strong>Vol retour vers Paris</strong>: Embarquez pour votre vol international, emportant avec vous les couleurs, les sons et les saveurs de la Colombie.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Mompox/main/jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Timing</p>
+                                <p class="text-gray-700">Arrivez à l'aéroport au moins 3 heures avant votre vol international pour éviter tout stress.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛄 Bagages</p>
+                                <p class="text-gray-700">Vérifiez les restrictions de poids et de taille de vos bagages pour votre vol international.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>💴</span> Budget
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget vol: </strong>850€/pers (Vol A/R Paris-Carthagène avec escale)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget transports: </strong>150€/pers (Transferts Carthagène-Mompox A/R, taxis locaux, bus)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget repas: </strong>440€/pers (40€/jour x 11 jours, repas variés et locaux)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget logement: </strong>770€/pers (70€/nuit x 11 nuits, hôtels de charme/milieu de gamme)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed"><strong>Budget activités: </strong>250€/pers (Musées, ateliers, excursion bateau, Castillo San Felipe, îles Rosario)</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de décembre à mars, et de juillet à août.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🛂 :</strong> Passeport valide 6 mois après la date de retour. Pas de visa requis pour les séjours de moins de 90 jours pour les citoyens français.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est le Peso Colombien (COP). Les cartes de crédit sont acceptées dans les grandes villes, mais prévoyez du liquide pour Mompox et les petites dépenses.</li>
+                    
+                        <li><strong>💉 :</strong> Vaccin contre la fièvre jaune recommandé si vous visitez des zones rurales. Consultez votre médecin pour les vaccins de routine. Prévoyez un répulsif anti-moustiques.</li>
+                    
+                        <li><strong>🚨 :</strong> La Colombie est généralement sûre pour les touristes, mais restez vigilant, surtout dans les grandes villes. Évitez de vous promener seul la nuit dans des zones isolées.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Mompox/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.colombia.travel/fr" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Colombia Travel</strong></a></li>
+                    
+                        <li><a href="https://www.busbud.com/fr/bus-colombia" target="_blank" class="hover:underline flex items-center gap-2"><strong>🚌 Busbud (pour la Colombie)</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/fr/co/colombia-weather" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌤️ Météo Colombie</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Mompox</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
